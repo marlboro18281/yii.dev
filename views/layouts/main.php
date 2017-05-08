@@ -36,12 +36,12 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'Home', 'url' => ['/']],
             ['label' => 'Articles', 'url' => ['/post/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'About', 'url' => ['/about']],
+            ['label' => 'Contact', 'url' => ['/contact']],
             Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
+                ['label' => 'Login', 'url' => ['/login']]
             ) : (
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')

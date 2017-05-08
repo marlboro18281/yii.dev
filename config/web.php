@@ -7,39 +7,49 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'language' => 'ru',
-//    'layout' => 'basic',
+   'layout' => 'main',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '123qweasd',
+            'baseUrl' => '',
+'cookieValidationKey' => '123qweasd',
         ],
         'cache' => [
-            'class' => 'yii\caching\FileCache',
-        ],
+    'class' => 'yii\caching\FileCache',
+],
         'user' => [
-            'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
-        ],
+    'identityClass' => 'app\models\User',
+    'enableAutoLogin' => true,
+],
         'errorHandler' => [
-            'errorAction' => 'site/error',
-        ],
+    'errorAction' => 'site/error',
+],
         'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
-        ],
+    'class' => 'yii\swiftmailer\Mailer',
+    // send all mails to a file by default. You have to set
+    // 'useFileTransport' to false and configure a transport
+    // for the mailer to send real emails.
+    'useFileTransport' => true,
+],
         'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [
-                [
-                    'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
-                ],
-            ],
+    'traceLevel' => YII_DEBUG ? 3 : 0,
+    'targets' => [
+        [
+            'class' => 'yii\log\FileTarget',
+            'levels' => ['error', 'warning'],
         ],
+    ],
+],
         'db' => require(__DIR__ . '/db.php'),
+
+        'urlManager' => [
+    'enablePrettyUrl' => true,
+    'showScriptName' => false,
+    'enableStrictParsing' => false,
+    'rules' => [
+        'about' =>'site/about'
+    ],
+],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
