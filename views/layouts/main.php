@@ -8,6 +8,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -58,6 +59,10 @@ AppAsset::register($this);
     ?>
 
     <div class="container">
+        <a href="<?= Url::to('/') ?>">home</a>
+        <?= Html::a('About', Url::to(['/about'])); ?>
+        <?= Html::a('Contact', Url::to(['/contact'])); ?>
+        <?= Html::a('Login', Url::to(['/login'])); ?>
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
