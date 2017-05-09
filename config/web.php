@@ -48,8 +48,13 @@ $config = [
             'enableStrictParsing' => false,
             'suffix' => '.html',// указываем что мы будем дописывать в конце экшена
             'rules' => [
+                [
+                    'pattern' => '', // значение
+                    'route' => 'site/index', // роут
+                    'suffix' => '' // окончание
+                ],
                 //'<action:\w+' => 'site/<action>', // будет открывать любые экшены
-                '<action:(about|contact|login)>' => 'site/<action>',// можно писать либо экшен либо контролер...
+                '<action:(about|contact|login|index)>' => 'site/<action>',// можно писать либо экшен либо контролер...
             ],
         ],
         /*
